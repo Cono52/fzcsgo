@@ -1,0 +1,66 @@
+[System]
+Name='csgo'
+Type='mamdani'
+Version=2.0
+NumInputs=5
+NumOutputs=1
+NumRules=0
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Power'
+Range=[0 1]
+NumMFs=5
+MF1='Weak':'trimf',[-0.4 0 0.25]
+MF2='Average':'trimf',[0.35 0.5 0.65]
+MF3='Strong':'trimf',[0.745 1 1.25]
+MF4='BelowAverage':'trimf',[0.15 0.3 0.45]
+MF5='AboveAverage':'trimf',[0.55 0.7 0.85]
+
+[Input2]
+Name='Accuracy'
+Range=[0 1]
+NumMFs=5
+MF1='Terrible':'trimf',[-0.4 0 0.2]
+MF2='Moderate':'trimf',[0.3 0.5 0.7]
+MF3='Precise':'trimf',[0.8 1 1.25]
+MF4='Poor':'trimf',[0.05 0.25 0.4]
+MF5='Good':'trimf',[0.6 0.75 0.95]
+
+[Input3]
+Name='Range'
+Range=[0 1]
+NumMFs=3
+MF1='Short':'trimf',[-0.4 0 0.4]
+MF2='Moderate':'trimf',[0.1 0.5 0.9]
+MF3='Long':'trimf',[0.6 1 1.4]
+
+[Input4]
+Name='RateOfFire'
+Range=[0 1]
+NumMFs=3
+MF1='Pew......Pew......Pew':'trimf',[-0.4 0 0.4]
+MF2='Pew...Pew...Pew':'trimf',[0.1 0.5 0.9]
+MF3='PewPewPewPewPew':'trimf',[0.6 1 1.4]
+
+[Input5]
+Name='Price'
+Range=[0 1]
+NumMFs=3
+MF1='Cheap':'trimf',[-0.4 0 0.4]
+MF2='Standard':'trimf',[0.1 0.5 0.9]
+MF3='Expensive':'trimf',[0.6 1 1.4]
+
+[Output1]
+Name='Value'
+Range=[0 1]
+NumMFs=3
+MF1='Poor':'trimf',[-0.4 0 0.4]
+MF2='Good':'trimf',[0.1 0.5 0.9]
+MF3='BangForYourBuck':'trimf',[0.6 1 1.4]
+
+[Rules]
