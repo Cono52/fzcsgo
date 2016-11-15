@@ -2,7 +2,7 @@
 Name='csgo'
 Type='mamdani'
 Version=2.0
-NumInputs=5
+NumInputs=4
 NumOutputs=1
 NumRules=0
 AndMethod='min'
@@ -13,47 +13,37 @@ DefuzzMethod='centroid'
 
 [Input1]
 Name='Power'
-Range=[0 1]
+Range=[25 240]
 NumMFs=5
-MF1='Weak':'trimf',[-0.4 0 0.25]
-MF2='Average':'trimf',[0.35 0.5 0.65]
-MF3='Strong':'trimf',[0.745 1 1.25]
-MF4='BelowAverage':'trimf',[0.15 0.3 0.45]
-MF5='AboveAverage':'trimf',[0.55 0.7 0.85]
+MF1='Weak':'trimf',[-61 25 27.5]
+MF2='Average':'trimf',[29 33 35]
+MF3='Strong':'trimf',[50 240 293.9]
+MF4='BelowAverage':'trimf',[26.5 28 29.5]
+MF5='AboveAverage':'trimf',[34 36 55]
 
 [Input2]
-Name='Accuracy'
-Range=[0 1]
-NumMFs=5
-MF1='Terrible':'trimf',[-0.4 0 0.2]
-MF2='Moderate':'trimf',[0.3 0.5 0.7]
-MF3='Precise':'trimf',[0.8 1 1.25]
-MF4='Poor':'trimf',[0.05 0.25 0.4]
-MF5='Good':'trimf',[0.6 0.75 0.95]
+Name='Range'
+Range=[4.5 92]
+NumMFs=3
+MF1='Short':'trimf',[-30.5 4.5 39.5]
+MF2='Moderate':'trimf',[19.8921143847487 29.8 66.4]
+MF3='Long':'trimf',[59.1685441941075 92.3 127]
 
 [Input3]
-Name='Range'
-Range=[0 1]
+Name='RateOfFire'
+Range=[41 1000]
 NumMFs=3
-MF1='Short':'trimf',[-0.4 0 0.4]
-MF2='Moderate':'trimf',[0.1 0.5 0.9]
-MF3='Long':'trimf',[0.6 1 1.4]
+MF1='Pew......Pew......Pew':'trimf',[-342.6 41 424.6]
+MF2='Pew...Pew...Pew':'trimf',[136.9 520.5 904.1]
+MF3='PewPewPewPewPew':'trimf',[616.4 1000 1384]
 
 [Input4]
-Name='RateOfFire'
-Range=[0 1]
-NumMFs=3
-MF1='Pew......Pew......Pew':'trimf',[-0.4 0 0.4]
-MF2='Pew...Pew...Pew':'trimf',[0.1 0.5 0.9]
-MF3='PewPewPewPewPew':'trimf',[0.6 1 1.4]
-
-[Input5]
 Name='Price'
-Range=[0 1]
+Range=[1050 5700]
 NumMFs=3
-MF1='Cheap':'trimf',[-0.4 0 0.4]
-MF2='Standard':'trimf',[0.1 0.5 0.9]
-MF3='Expensive':'trimf',[0.6 1 1.4]
+MF1='Cheap':'trimf',[-810 1050 2910]
+MF2='Standard':'trimf',[1515 3375 5235]
+MF3='Expensive':'trimf',[3840 5700 7560]
 
 [Output1]
 Name='Value'
