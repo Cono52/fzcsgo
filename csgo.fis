@@ -13,13 +13,12 @@ DefuzzMethod='centroid'
 
 [Input1]
 Name='Power'
-Range=[25 240]
-NumMFs=5
-MF1='Weak':'trimf',[-61 25 27.5]
-MF2='Average':'trimf',[29 33 35]
-MF3='Strong':'trimf',[50 240 293.9]
-MF4='BelowAverage':'trimf',[26.5 28 29.5]
-MF5='AboveAverage':'trimf',[34 36 55]
+Range=[0 1]
+NumMFs=4
+MF1='Weak':'trimf',[0.25 0.25 0.3]
+MF2='Average':'trimf',[0.275 0.35 0.36]
+MF3='Strong':'trimf',[0.44 1 1]
+MF4='AboveAverage':'trimf',[0.35 0.4 0.45]
 
 [Input2]
 Name='Range'
