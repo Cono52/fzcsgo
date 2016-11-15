@@ -4,7 +4,7 @@ Type='mamdani'
 Version=2.0
 NumInputs=4
 NumOutputs=1
-NumRules=0
+NumRules=12
 AndMethod='min'
 OrMethod='max'
 ImpMethod='min'
@@ -53,3 +53,15 @@ MF2='Good':'trimf',[0.1 0.5 0.9]
 MF3='BangForYourBuck':'trimf',[0.6 1 1.4]
 
 [Rules]
+1 1 1 3, 1 (1) : 1
+3 3 3 1, 3 (1) : 1
+4 2 2 2, 3 (1) : 1
+3 0 0 1, 2 (1) : 1
+2 1 3 2, 2 (1) : 1
+1 2 3 1, 3 (1) : 1
+0 3 3 1, 3 (1) : 1
+-3 3 3 1, 3 (1) : 1
+0 0 0 3, -3 (1) : 1
+3 3 1 3, 2 (1) : 1
+2 2 2 2, 2 (1) : 1
+-1 0 0 -3, 2 (1) : 1
