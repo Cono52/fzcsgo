@@ -1,0 +1,43 @@
+[System]
+Name='ratingXprice'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=0
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Rating'
+Range=[0 100]
+NumMFs=5
+MF1='Poor':'trimf',[-40 0 25]
+MF2='good':'trimf',[25 50 75]
+MF3='excellent':'trimf',[75 100 140]
+MF4='OK':'trimf',[10 30 50]
+MF5='very-good':'trimf',[50 70 90]
+
+[Input2]
+Name='Price'
+Range=[0 3000]
+NumMFs=4
+MF1='Cheap':'trimf',[-1200 0 900]
+MF2='Average':'trimf',[400 800 1200]
+MF3='very-high':'trimf',[1900 3000 4200]
+MF4='high':'trimf',[1000 1800 2600]
+
+[Output1]
+Name='Value'
+Range=[0 1]
+NumMFs=5
+MF1='Rip-off':'trimf',[-0.4 0 0.2]
+MF2='Not-great':'trimf',[0.1 0.25 0.4]
+MF3='Excellent':'trimf',[0.8 1 1.4]
+MF4='Good':'trimf',[0.6 0.75 0.9]
+MF5='Worth-it':'trimf',[0.3 0.5 0.7]
+
+[Rules]
