@@ -2,9 +2,9 @@
 Name='csgo'
 Type='mamdani'
 Version=2.0
-NumInputs=4
+NumInputs=3
 NumOutputs=1
-NumRules=12
+NumRules=32
 AndMethod='min'
 OrMethod='max'
 ImpMethod='min'
@@ -14,11 +14,12 @@ DefuzzMethod='centroid'
 [Input1]
 Name='Power'
 Range=[0.25 1]
-NumMFs=4
+NumMFs=5
 MF1='Weak':'trimf',[0.25 0.25 0.3]
-MF2='Average':'trimf',[0.275 0.325 0.35]
-MF3='Strong':'trimf',[0.45 0.6 100000]
-MF4='AboveAverage':'trimf',[0.3475 0.43 0.48]
+MF2='Okay':'trimf',[0.275 0.325 0.35]
+MF3='Strong':'trimf',[0.5 0.65 100000]
+MF4='Average':'trimf',[0.3475 0.43 0.48]
+MF5='AboveAverage':'trimf',[0.43 0.55 0.62]
 
 [Input2]
 Name='Range'
@@ -36,32 +37,46 @@ MF1='LowRPM':'trimf',[-342.6 41 424.6]
 MF2='MediumRPM':'trimf',[136.9 520.5 904.1]
 MF3='HighRPM':'trimf',[616.4 1000 1384]
 
-[Input4]
-Name='Price'
-Range=[1050 5700]
-NumMFs=3
-MF1='Cheap':'trimf',[-810 1050 2910]
-MF2='Standard':'trimf',[1515 3375 5235]
-MF3='Expensive':'trimf',[3840 5700 7560]
-
 [Output1]
-Name='Value'
-Range=[0 1]
-NumMFs=3
-MF1='Poor':'trimf',[-0.4 0 0.4]
-MF2='Good':'trimf',[0.1 0.5 0.9]
-MF3='BangForYourBuck':'trimf',[0.6 1 1.4]
+Name='Rating'
+Range=[0 100]
+NumMFs=5
+MF1='Poor':'trimf',[-40 0 25]
+MF2='Good':'trimf',[50 70 90]
+MF3='Excellent':'trimf',[75 100 140]
+MF4='Okay':'trimf',[10 30 50]
+MF5='Average':'trimf',[25 50 75]
 
 [Rules]
-1 1 1 3, 1 (1) : 1
-3 3 3 1, 3 (1) : 1
-4 2 2 2, 3 (1) : 1
-3 0 0 1, 2 (1) : 1
-2 1 3 2, 2 (1) : 1
-1 2 3 1, 3 (1) : 1
-0 3 3 1, 3 (1) : 1
--3 3 3 1, 3 (1) : 1
-0 0 0 3, -3 (1) : 1
-3 3 1 3, 2 (1) : 1
-2 2 2 2, 2 (1) : 1
--1 0 0 -3, 2 (1) : 1
+1 0 1, 1 (1) : 1
+3 0 3, 3 (1) : 1
+3 0 1, 5 (1) : 1
+3 0 2, 5 (1) : 1
+3 0 2, 2 (1) : 1
+5 0 1, 4 (1) : 1
+5 0 2, 5 (1) : 1
+5 0 3, 2 (1) : 1
+4 0 3, 5 (1) : 1
+4 0 2, 4 (1) : 1
+4 0 1, 4 (1) : 1
+2 0 3, 4 (1) : 1
+2 0 2, 4 (1) : 1
+2 0 1, 1 (1) : 1
+1 0 3, 1 (1) : 1
+1 0 2, 1 (1) : 1
+1 0 1, 1 (1) : 1
+3 3 0, 3 (1) : 1
+3 2 0, 2 (1) : 1
+3 1 0, 4 (1) : 1
+5 3 0, 2 (1) : 1
+5 2 0, 5 (1) : 1
+5 1 0, 4 (1) : 1
+4 3 0, 5 (1) : 1
+4 2 0, 4 (1) : 1
+4 1 0, 1 (1) : 1
+2 3 0, 4 (1) : 1
+2 2 0, 4 (1) : 1
+2 1 0, 1 (1) : 1
+1 3 0, 1 (1) : 1
+1 2 0, 1 (1) : 1
+1 1 0, 1 (1) : 1
