@@ -13,29 +13,29 @@ DefuzzMethod='centroid'
 
 [Input1]
 Name='Power'
-Range=[0.25 1]
+Range=[20 40]
 NumMFs=5
-MF1='Weak':'trimf',[0.25 0.25 0.3]
-MF2='Okay':'trimf',[0.275 0.325 0.35]
-MF3='Strong':'trimf',[0.5 0.65 100000]
-MF4='Average':'trimf',[0.3475 0.43 0.48]
-MF5='AboveAverage':'trimf',[0.43 0.55 0.62]
+MF1='Weak':'trimf',[20 20 21.43]
+MF2='Okay':'trimf',[20.71 22.14 23.57]
+MF3='Strong':'trimf',[27.14 30.71 500]
+MF4='Average':'trimf',[21.43 24.29 27.14]
+MF5='AboveAverage':'trimf',[24.29 27.14 32.86]
 
 [Input2]
 Name='Range'
-Range=[4.5 92]
+Range=[4 50]
 NumMFs=3
-MF1='Short':'trimf',[-30.5 4.5 39.5]
-MF2='Moderate':'trimf',[19.8921143847487 29.8 66.4]
-MF3='Long':'trimf',[59.1685441941075 92.3 127]
+MF1='Short':'trimf',[-14.4 4 22.4]
+MF2='Moderate':'trimf',[12.09 17.3 36.55]
+MF3='Long':'trimf',[32.74 50.18 68.4]
 
 [Input3]
 Name='RateOfFire'
-Range=[41 1000]
+Range=[500 1000]
 NumMFs=3
-MF1='LowRPM':'trimf',[-342.6 41 424.6]
-MF2='MediumRPM':'trimf',[136.9 520.5 904.1]
-MF3='HighRPM':'trimf',[616.4 1000 1384]
+MF1='LowRPM':'trimf',[300 500 700]
+MF2='MediumRPM':'trimf',[550 750 950]
+MF3='HighRPM':'trimf',[800 1000 1200]
 
 [Output1]
 Name='Rating'
